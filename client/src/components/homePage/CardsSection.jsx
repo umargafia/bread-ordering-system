@@ -11,7 +11,14 @@ function CardsSection() {
   return (
     <Element name="iphones" className="iphones">
       <Box
-        sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}
+        sx={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          backgroundColor: 'primary.main',
+          mt: 3,
+          borderRadius: 3,
+        }}
         id="items"
       >
         {iphoneLists.map((item) => (

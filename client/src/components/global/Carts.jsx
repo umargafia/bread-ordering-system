@@ -11,21 +11,37 @@ function Carts({ item }) {
     navigate(`/item/${item.id}`);
   }
   return (
-    <Grid container sm={5} md={2} sx={{ m: 2 }}>
-      <MyCard sx={{ padding: 3 }}>
+    <Grid container sm={3} sx={{ m: 2, height: 300 }}>
+      <MyCard
+        sx={{
+          padding: 0,
+          overflow: 'hidden',
+          borderRadius: 2,
+          pb: 3,
+          width: '100%',
+        }}
+      >
         <Box
           sx={{
-            height: 250,
             display: 'flex',
             alignItems: 'center',
             cursor: 'pointer',
           }}
           onClick={() => handleClick(item)}
         >
-          <img src={item.image} alt={item.name} style={{ width: '100%' }} />
+          <img
+            src={item.image}
+            alt={item.name}
+            style={{
+              width: '100%',
+              height: 200,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
         </Box>
-        <Divider sx={{ my: 2 }} />
-        <Grid
+        <Divider sx={{ my: 0.5 }} />
+        <Box
           container
           sx={{
             display: 'flex',
@@ -34,17 +50,17 @@ function Carts({ item }) {
             width: '100%',
           }}
         >
-          <Typography textAlign="center">{item.name}</Typography>
-          <Typography fontWeight="bold">₦{item.price}</Typography>
+          <Typography fontWeight="bold" variant="h5">
+            ₦{item.price}
+          </Typography>
           <Button
-            variant="outlined"
-            fullWidth
-            sx={{ mt: 2 }}
+            variant="contained"
+            sx={{ mt: 2, ml: 1, mr: 1 }}
             onClick={() => handleClick(item)}
           >
-            View item details
+            more details
           </Button>
-        </Grid>
+        </Box>
       </MyCard>
     </Grid>
   );
