@@ -68,7 +68,7 @@ const CartDrawer = ({ handleOpen, open }) => {
       container
     >
       <Typography color="white" variant="h5">
-        My {noOfItems <= 1 ? 'Order' : 'orders'}
+        My Cart
       </Typography>
       <Row>
         <Typography

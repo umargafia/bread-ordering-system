@@ -10,17 +10,14 @@ import CartDrawer from '../components/cart/Cart';
 
 function HomePage() {
   return (
-    <Box>
+    <Box mb={3}>
       <Grid container>
-        <Grid xs={1} mr={5}>
-          <MyAppbar />
-        </Grid>
-        <Grid xs={10} container>
+        <Grid xs={12} container>
           <WelcomeSection />
-          <Grid xs={9}>
+          <Grid xs={8}>
             <CardsSection />
           </Grid>
-          <Grid xs={3}>
+          <Grid xs={3.5}>
             <CartDrawer />
           </Grid>
         </Grid>

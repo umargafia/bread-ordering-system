@@ -18,6 +18,7 @@ function CardsSection() {
           backgroundColor: 'primary.main',
           mt: 3,
           borderRadius: 3,
+          pb: 5,
         }}
         id="items"
       >

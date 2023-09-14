@@ -10,6 +10,7 @@ import { getOrders } from '../store/api';
 import IphoneLists from '../constants/IphoneLists';
 import Billing from '../components/order/Billing';
 import Address from '../components/order/Address';
+import WelcomeSection from '../components/homePage/WelcomeSection';
 
 export default function ReceptPage() {
   const { token } = useSelector((state) => state.auth);
@@ -50,7 +51,7 @@ export default function ReceptPage() {
 
   return (
     <>
-      <MyAppbar />
+      <WelcomeSection />
       <Box>
         <Mycard sx={{ mb: 1, height: '60vh', overflowY: 'auto', p: 2 }}>
           <Typography variant="h4" color="primary">
