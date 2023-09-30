@@ -6,7 +6,7 @@ function AdminAppBar(props) {
   const theme = useTheme();
   return (
     <AppBar position="sticky">
-      <Toolbar>
+      <Toolbar sx={{ bgcolor: theme.palette.primary.black }}>
         <Button
           sx={{
             color: '#fff',

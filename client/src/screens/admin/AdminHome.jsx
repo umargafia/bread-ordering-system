@@ -20,10 +20,10 @@ function AdminHome() {
       <Grid xs={12}>
         <AdminAppBar />
       </Grid>
-      <Grid xs={6} sx={{ height: '130vh' }}>
+      <Grid xs={12} sx={{ height: '130vh' }}>
         <OrderItemCard />
       </Grid>
-      <Grid xs={6}>
+      {/* <Grid xs={6}>
         <MyCard sx={{ height: '45%', bgcolor: 'primary.main' }}>
           <ProfileSection />
         </MyCard>
@@ -32,7 +32,7 @@ function AdminHome() {
         >
           <Users />
         </MyCard>
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 }

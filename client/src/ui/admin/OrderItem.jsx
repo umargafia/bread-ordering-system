@@ -67,15 +67,22 @@ function OrderItem({ item }) {
   };
 
   return (
-    <MyCard>
+    <MyCard
+      sx={{
+        width: 300,
+        height: 500,
+        mr: 1,
+        overflow: 'scroll',
+      }}
+    >
       <Grid container sx={{ m: 1 }}>
         <Grid xs={12} container>
-          <Grid xs={1} sx={{ mr: 2 }}>
+          <Grid xs={1} sx={{ mr: 3 }}>
             <Avatar sx={{ p: 1 }}>
               <Typography variant="h5">{item?.user?.name.charAt(0)}</Typography>
             </Avatar>
           </Grid>
-          <Grid sx={{ ml: 2 }}>
+          <Grid sx={{ ml: 2, mt: 1 }}>
             <Typography fontWeight="bold" textTransform="capitalize">
               {item?.user?.name}
             </Typography>
@@ -84,14 +91,20 @@ function OrderItem({ item }) {
             </Typography>
           </Grid>
         </Grid>
-        <Grid xs={12} container sx={{ mt: 2 }}>
-          <Grid sx={{ mt: 1, height: 110 }}>
-            <img src={image} style={{ height: '100%' }} />
-          </Grid>
+        <Grid xs={12} container sx={{ mt: 2, position: 'relative' }}>
+          <Grid
+            sx={{
+              marginTop: 1,
+              height: 200,
+              width: '100%',
+              backgroundColor: 'rgba(0, 0, 0, 0.5)',
+              backgroundImage: `url(${image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              borderRadius: 2,
+            }}
+          ></Grid>
           <Grid sx={{ mt: 1, ml: 2 }}>
-            <Typography variant="h5" fontWeight="bold" color="primary">
-              {iphone?.name}
-            </Typography>
             <Typography>{item?.cart?.quantity}, Items</Typography>
             <Typography color="gray">
               Ordered on {FormatDate(item.createdAt)}
@@ -100,7 +113,12 @@ function OrderItem({ item }) {
           </Grid>
         </Grid>
         <Grid xs={12} sx={{ m: 1, mt: 3 }}>
-          <Button variant="outlined" fullWidth onClick={handleExpandClick}>
+          <Button
+            variant="outlined"
+            fullWidth
+            onClick={handleExpandClick}
+            sx={{ border: '2px solid gray', color: 'primary.black' }}
+          >
             {expanded ? 'Hide' : 'Show more'}
           </Button>
         </Grid>
