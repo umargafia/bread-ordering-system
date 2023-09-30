@@ -9,6 +9,7 @@ import AuthPage from './screens/AuthPage';
 import OrderPage from './screens/OrderPage';
 import ReceptPage from './screens/ReciptPage';
 import AdminHome from './screens/admin/AdminHome';
+import UsersPage from './screens/admin/Users';
 
 function App() {
   const user = useSelector((state) => state.auth.user);
@@ -50,6 +51,10 @@ function App() {
     {
       path: '/',
       element: <AdminHome />,
+    },
+    {
+      path: '/users',
+      element: <UsersPage />,
     },
   ]);
 

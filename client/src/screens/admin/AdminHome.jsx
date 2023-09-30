@@ -23,16 +23,6 @@ function AdminHome() {
       <Grid xs={12} sx={{ height: '130vh' }}>
         <OrderItemCard />
       </Grid>
-      {/* <Grid xs={6}>
-        <MyCard sx={{ height: '45%', bgcolor: 'primary.main' }}>
-          <ProfileSection />
-        </MyCard>
-        <MyCard
-          sx={{ height: '45%', bgcolor: 'primary.main', overflow: 'auto' }}
-        >
-          <Users />
-        </MyCard>
-      </Grid> */}
     </Grid>
   );
 }

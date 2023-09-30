@@ -73,13 +73,19 @@ function OrderItem({ item }) {
         height: 500,
         mr: 1,
         overflow: 'scroll',
+        transition: 'all .5s',
+        ':hover': {
+          transform: 'scale(1.03)',
+        },
       }}
     >
       <Grid container sx={{ m: 1 }}>
         <Grid xs={12} container>
           <Grid xs={1} sx={{ mr: 3 }}>
             <Avatar sx={{ p: 1 }}>
-              <Typography variant="h5">{item?.user?.name.charAt(0)}</Typography>
+              <Typography variant="h5" textTransform={'uppercase'}>
+                {item?.user?.name.charAt(0)}
+              </Typography>
             </Avatar>
           </Grid>
           <Grid sx={{ ml: 2, mt: 1 }}>
@@ -98,7 +104,7 @@ function OrderItem({ item }) {
               height: 200,
               width: '100%',
               backgroundColor: 'rgba(0, 0, 0, 0.5)',
-              backgroundImage: `url(${image})`,
+              backgroundImage: `url(${iphone?.image})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               borderRadius: 2,

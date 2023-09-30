@@ -20,7 +20,7 @@ export default function OrderItemCard() {
     setLoading(true);
     const response = await getAllOrders({ token });
 
-    setOrders(response?.data);
+    setOrders(response?.data.reverse());
     setLoading(false);
   };
 
@@ -38,6 +38,7 @@ export default function OrderItemCard() {
           p: 1,
           display: 'flex',
           flexWrap: 'wrap',
+          justifyContent: 'center',
         }}
       >
         <Divider sx={{ backgroundColor: 'white' }} />
@@ -48,6 +49,7 @@ export default function OrderItemCard() {
               justifyContent: 'center',
               alignItems: 'center',
               height: '100%',
+              width: '100%',
             }}
           >
             <CircularProgress size={40} sx={{ color: 'white' }} />

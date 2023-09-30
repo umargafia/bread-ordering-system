@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 import { getAllUsers } from '../../store/api';
 
-export default function Users() {
+export default function Users({ row }) {
   const { token } = useSelector((state) => state.auth);
   const [users, setUsers] = useState();
 
@@ -17,15 +17,21 @@ export default function Users() {
     setUsers(response?.data);
   };
 
+  const rowStyle = {
+    display: 'flex',
+  };
+
   return (
     <Box>
-      <Typography color="white" variant="h5" fontWeight="bold">
+      <Typography variant="h5" fontWeight="bold" mt={2}>
         Users
       </Typography>
       <Divider sx={{ bgcolor: 'white' }} />
-      {users?.map((item) => (
-        <UserItem item={item} key={item._id} />
-      ))}
+      <Box sx={row && rowStyle}>
+        {users?.map((item) => (
+          <UserItem item={item} key={item._id} />
+        ))}
+      </Box>
     </Box>
   );
 }

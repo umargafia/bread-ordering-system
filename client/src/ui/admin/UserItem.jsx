@@ -14,7 +14,7 @@ function UserItem({ item }) {
     console.log(response);
   };
   return (
-    <Grid sx={{ m: 2 }}>
+    <Grid sx={{ m: 2, width: 300 }}>
       <Card sx={{ p: 1 }}>
         <Option header="Name" title={item?.name} />
         <Option header="Email" title={item?.email} />
@@ -41,8 +41,12 @@ export default UserItem;
 const Option = ({ header, title }) => {
   return (
     <Row>
-      <Typography sx={{ fontWeight: 'bold', mr: 1 }}>{header}:</Typography>
-      <Typography>{title}</Typography>
+      <Typography
+        sx={{ fontWeight: 'bold', mr: 1, textTransform: 'capitalize' }}
+      >
+        {header}:
+      </Typography>
+      <Typography textTransform="capitalize">{title}</Typography>
     </Row>
   );
 };
