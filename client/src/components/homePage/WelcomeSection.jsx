@@ -17,7 +17,7 @@ export default function WelcomeSection() {
       sx={{
         width: '100%',
         height: 120,
-        bgcolor: 'primary.main',
+        bgcolor: 'primary.black',
         borderRadius: 3,
       }}
     >

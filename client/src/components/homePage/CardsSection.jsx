@@ -15,7 +15,7 @@ function CardsSection() {
           display: 'flex',
           flexWrap: 'wrap',
           justifyContent: 'center',
-          backgroundColor: 'primary.main',
+          backgroundColor: 'primary.black',
           mt: 3,
           borderRadius: 3,
           pb: 5,

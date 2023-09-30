@@ -15,7 +15,7 @@ export default function MyButton({
       fullWidth={fullWidth}
       disabled={disabled}
       variant={variant ? variant : 'contained'}
-      sx={{ pt: 1.2, color: 'white', ...sx }}
+      sx={{ pt: 1.2, color: 'white', backgroundColor: 'primary.black', ...sx }}
     >
       {text}
     </Button>
