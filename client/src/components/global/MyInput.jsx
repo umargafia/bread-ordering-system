@@ -1,10 +1,10 @@
 import { Box, TextField } from '@mui/material';
 import React from 'react';
 
-function MyInput({ text, type, props }) {
+function MyInput({ text, type, props, fullWidth = false }) {
   return (
     <TextField
-      fullWidth
+      fullWidth={fullWidth}
       variant="standard"
       placeholder={text}
       type={type}

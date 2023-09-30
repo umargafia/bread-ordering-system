@@ -69,7 +69,7 @@ const CartDrawer = ({ handleOpen, open }) => {
       sx={{
         bgcolor: 'primary.black',
         width: '100%',
-        height: '100vh',
+        height: '80vh',
         mt: 3,
         ml: 1,
         borderRadius: 2,
@@ -95,7 +95,7 @@ const CartDrawer = ({ handleOpen, open }) => {
         </Typography>
       </Row>
       <Divider style={{ background: 'white' }} />
-      <Box sx={{ height: '78vh', overflowY: 'auto' }}>
+      <Box sx={{ height: '78%', overflowY: 'auto' }}>
         {loading ? (
           <Box sx={{ display: 'flex', justifyContent: 'center', pt: 5 }}>
             <CircularProgress sx={{ color: 'white' }} size={30} />

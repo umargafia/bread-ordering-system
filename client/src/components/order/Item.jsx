@@ -7,6 +7,9 @@ import MyCard from '../global/Mycard';
 import { InfoItemFW } from './InfoItem';
 import MyButton from '../global/MyButton';
 import { AddToCart, createOrder } from '../../store/api';
+import Address from './Address';
+import Billing from './Billing';
+import Row from '../global/Row';
 
 function Item() {
   const location = useLocation();
@@ -56,13 +59,22 @@ function Item() {
   };
 
   return (
-    <MyCard sx={{ bgcolor: 'white', minHeight: '50vh', p: 3 }}>
+    <MyCard sx={{ bgcolor: 'white', p: 3 }}>
       <InfoItemFW title="Number of Items" text={cartInfo.noOfItems} normal />
       <InfoItemFW title="Subtotal" text={cartInfo.totalPrice} />
       <InfoItemFW title="Shipping" text="1000" />
       <InfoItemFW title="Tax" text="400" />
       <InfoItemFW title="Discount" text="000" />
-      <Box sx={{ mt: '40%' }}>
+      <Row sx={{ justifyContent: 'space-between' }}>
+        <Box sx={{ width: '20%', ml: -2 }}>
+          <Billing />
+        </Box>
+        <Box sx={{ width: '20%' }}>
+          <Address />
+        </Box>
+      </Row>
+
+      <Box>
         <Typography sx={{ textAlign: 'right', fontSize: 30 }}>
           ₦{totalPrice}
         </Typography>
@@ -70,7 +82,7 @@ function Item() {
         <MyButton
           text={
             loading ? (
-              <CircularProgress sx={{ color: 'primary.main' }} size={20} />
+              <CircularProgress sx={{ color: 'primary.black' }} size={20} />
             ) : (
               `pay ₦${totalPrice}`
             )

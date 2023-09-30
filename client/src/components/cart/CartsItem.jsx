@@ -27,9 +27,7 @@ function CartsItem({ item, fetchCarts }) {
     setItem(selectedItem);
   }, [id]);
 
-  const handleNavigate = () => {
-    navigate(`/item/${id}`);
-  };
+  const handleNavigate = () => {};
 
   const handleRemove = async () => {
     setLoading(true);

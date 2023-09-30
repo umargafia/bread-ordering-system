@@ -4,13 +4,21 @@ import React from 'react';
 import * as Scroll from 'react-scroll';
 
 import MyCard from '../global/Mycard';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import image from '../../assets/30u.png';
 import { useNavigate } from 'react-router-dom';
+import { logout } from '../../store/authSlice';
 const Link = Scroll.Link;
 export default function WelcomeSection() {
   const { user } = useSelector((state) => state.auth);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  function handleLogout() {
+    dispatch(logout());
+    localStorage.clear();
+    navigate('/');
+  }
 
   return (
     <MyCard
@@ -67,7 +75,9 @@ export default function WelcomeSection() {
           >
             Orders
           </Button>
-          <Button sx={{ color: 'white' }}>Logout</Button>
+          <Button sx={{ color: 'white' }} onClick={handleLogout}>
+            Logout
+          </Button>
         </Grid>
         <Grid
           xs={5}

@@ -180,7 +180,6 @@ function Address() {
         <Box>
           <Typography
             sx={{
-              color: 'primary.main',
               fontSize: 20,
               mb: 1,
               fontWeight: 'bold',
@@ -188,14 +187,14 @@ function Address() {
           >
             Address
           </Typography>
-          <InfoItem title="Zip Code" text={addressData.zipCode || 'N/A'} />
-          <InfoItem title="Country" text={addressData.country || 'N/A'} />
-          <InfoItem title="State" text={addressData.state || 'N/A'} />
+          <InfoItem title="Zip Code" text={addressData.zipCode || 'Null'} />
+          <InfoItem title="Country" text={addressData.country || 'Null'} />
+          <InfoItem title="State" text={addressData.state || 'Null'} />
           <InfoItem
             title="Local Government"
-            text={addressData.localGov || 'N/A'}
+            text={addressData.localGov || 'Null'}
           />
-          <InfoItem title="Street" text={addressData.street || 'N/A'} />
+          <InfoItem title="Area" text={addressData.street || 'Null'} />
           <MyButton text="Edit" onClick={() => setEdit(true)} />
         </Box>
       )}

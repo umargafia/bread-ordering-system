@@ -19,6 +19,8 @@ function CardsSection() {
           mt: 3,
           borderRadius: 3,
           pb: 5,
+          maxHeight: '80vh',
+          overflowY: 'scroll',
         }}
         id="items"
       >

@@ -176,7 +176,6 @@ function Billing() {
           <Box>
             <Typography
               sx={{
-                color: 'primary.main',
                 fontSize: 20,
                 mb: 1,
                 fontWeight: 'bold',
@@ -184,10 +183,16 @@ function Billing() {
             >
               Payment Information
             </Typography>
-            <InfoItem title="Full Name" text={cardData.cardHolder || 'N/A'} />
-            <InfoItem title="Card Number" text={cardData.cardNumber || 'N/A'} />
-            <InfoItem title="Expire Date" text={cardData.expiration || 'N/A'} />
-            <InfoItem title="Cvv" text={cardData.cvv || 'N/A'} />
+            <InfoItem title="Full Name" text={cardData.cardHolder || 'Null'} />
+            <InfoItem
+              title="Card Number"
+              text={cardData.cardNumber || 'Null'}
+            />
+            <InfoItem
+              title="Expire Date"
+              text={cardData.expiration || 'Null'}
+            />
+            <InfoItem title="Cvv" text={cardData.cvv || 'Null'} />
             <MyButton
               text="Edit Payment Information"
               onClick={() => setEdith(true)}
