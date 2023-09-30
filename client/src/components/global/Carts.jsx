@@ -14,6 +14,7 @@ import { AddToCart } from '../../store/api';
 import { useSelector } from 'react-redux';
 import MyButton from './MyButton';
 import { Add, Remove } from '@mui/icons-material';
+import formatNumberWithCommas from '../../constants/FormatNumber';
 
 function Carts({ item }) {
   const [isAddToCart, setIsAddToCart] = useState(false);
@@ -112,7 +113,7 @@ function Carts({ item }) {
           }}
         >
           <Typography fontWeight="bold" variant="h5">
-            ₦{price}
+            ₦{formatNumberWithCommas(price)}
           </Typography>
           <Box>
             {!isAddToCart || quantity <= 0 ? (

@@ -11,6 +11,7 @@ import IphoneLists from '../constants/IphoneLists';
 import Billing from '../components/order/Billing';
 import Address from '../components/order/Address';
 import WelcomeSection from '../components/homePage/WelcomeSection';
+import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 
 export default function ReceptPage() {
   const { token } = useSelector((state) => state.auth);
@@ -52,52 +53,66 @@ export default function ReceptPage() {
   return (
     <>
       <WelcomeSection />
-      <Box>
-        <Mycard sx={{ mb: 1, height: '60vh', overflowY: 'auto', p: 2 }}>
-          <Typography variant="h4" color="primary">
+      <Grid container>
+        <Grid xs={9}>
+          <Typography variant="h4" color="primary.black" mt={2}>
             Orders
           </Typography>
-          {loading ? (
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '90%',
-              }}
-            >
-              <CircularProgress />
-            </Box>
-          ) : orders.length === 0 ? (
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                height: '90%',
-              }}
-            >
-              <Typography variant="h4" color="primary">
-                No orders
-              </Typography>
-            </Box>
-          ) : (
-            orders.map((item) => {
-              return <ReceiptItem item={item} key={item.id} />;
-            })
-          )}
-        </Mycard>
-        <Mycard sx={{ mb: 2, p: 2 }}>
-          <Grid container>
-            <Grid sm={6} sx={{ borderRight: '1px solid gray' }}>
-              <Billing />
+          <Mycard
+            sx={{
+              mb: 1,
+              height: '80vh',
+              overflowY: 'auto',
+              p: 2,
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+            }}
+          >
+            {loading ? (
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  height: '90%',
+                }}
+              >
+                <CircularProgress sx={{ color: 'primary.black' }} />
+              </Box>
+            ) : orders.length === 0 ? (
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  height: '90%',
+                }}
+              >
+                <Typography variant="h4" color="primary">
+                  No orders
+                </Typography>
+              </Box>
+            ) : (
+              orders.map((item) => {
+                return <ReceiptItem item={item} key={item.id} />;
+              })
+            )}
+          </Mycard>
+        </Grid>
+        <Grid xs={3}>
+          <Mycard sx={{ mb: 2, p: 2, mt: 8, ml: 1 }}>
+            <Grid container>
+              <Grid sm={12}>
+                <Billing />
+              </Grid>
+              <Grid sm={12} sx={{ pl: 2 }}>
+                <Address />
+              </Grid>
             </Grid>
-            <Grid sm={6} sx={{ pl: 2 }}>
-              <Address />
-            </Grid>
-          </Grid>
-        </Mycard>
-      </Box>
+          </Mycard>
+        </Grid>
+      </Grid>
     </>
   );
 }

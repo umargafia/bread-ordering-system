@@ -147,7 +147,7 @@ function Billing() {
 
             {loading ? (
               <Button variant="contained" disabled fullWidth>
-                <CircularProgress sx={{ color: 'primary.main' }} size={20} />
+                <CircularProgress sx={{ color: 'primary.black' }} size={20} />
               </Button>
             ) : (
               <Box sx={{ display: 'flex' }}>
@@ -182,14 +182,14 @@ function Billing() {
                 fontWeight: 'bold',
               }}
             >
-              Billing Information
+              Payment Information
             </Typography>
             <InfoItem title="Full Name" text={cardData.cardHolder || 'N/A'} />
             <InfoItem title="Card Number" text={cardData.cardNumber || 'N/A'} />
             <InfoItem title="Expire Date" text={cardData.expiration || 'N/A'} />
             <InfoItem title="Cvv" text={cardData.cvv || 'N/A'} />
             <MyButton
-              text="Edith Billing Information"
+              text="Edit Payment Information"
               onClick={() => setEdith(true)}
             />
           </Box>
