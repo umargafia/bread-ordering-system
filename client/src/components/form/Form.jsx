@@ -83,12 +83,11 @@ function Form() {
     <>
       {isLogin ? (
         <>
-          <Typography variant="h3" color="primary">
-            LOGIN
-          </Typography>
+          <Typography variant="h3">LOGIN</Typography>
           <MyInput
             text="Email"
             type="email"
+            fullWidth
             props={{
               value: loginData.email,
               onChange: handleLoginChange('email'),
@@ -98,6 +97,7 @@ function Form() {
           <MyInput
             text="Password"
             type="password"
+            fullWidth
             props={{
               value: loginData.password,
               onChange: handleLoginChange('password'),
@@ -114,7 +114,7 @@ function Form() {
             onClick={handleLogin}
           />
           <Button
-            sx={{ textTransform: 'capitalize' }}
+            sx={{ textTransform: 'capitalize', color: 'primary.black' }}
             onClick={() => setLogin(false)}
           >
             Don't have an account? Create one
@@ -122,10 +122,9 @@ function Form() {
         </>
       ) : (
         <>
-          <Typography variant="h3" color="primary">
-            Create Account
-          </Typography>
+          <Typography variant="h3">Create Account</Typography>
           <MyInput
+            fullWidth
             props={{
               value: SignUpData.name,
               onChange: handleSignUpChange('name'),
@@ -134,6 +133,7 @@ function Form() {
             type="text"
           />
           <MyInput
+            fullWidth
             props={{
               value: SignUpData.username,
               onChange: handleSignUpChange('username'),
@@ -142,6 +142,7 @@ function Form() {
             type="text"
           />
           <MyInput
+            fullWidth
             props={{
               value: SignUpData.email,
               onChange: handleSignUpChange('email'),
@@ -150,6 +151,7 @@ function Form() {
             type="email"
           />
           <MyInput
+            fullWidth
             props={{
               value: SignUpData.password,
               onChange: handleSignUpChange('password'),
@@ -158,6 +160,7 @@ function Form() {
             type="password"
           />
           <MyInput
+            fullWidth
             props={{
               value: SignUpData.confirmPassword,
               onChange: handleSignUpChange('confirmPassword'),
@@ -177,7 +180,7 @@ function Form() {
           />
 
           <Button
-            sx={{ textTransform: 'capitalize' }}
+            sx={{ textTransform: 'capitalize', color: 'primary.black' }}
             onClick={() => setLogin(true)}
           >
             Already have an account? Login

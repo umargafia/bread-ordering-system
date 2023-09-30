@@ -24,6 +24,7 @@ const authSlice = createSlice({
       state.isAuthenticated = false;
       state.user = null;
       state.token = '';
+      state.carts = [];
     },
     setNoOfCarts: (state, action) => {
       state.noOfCarts = action.payload;

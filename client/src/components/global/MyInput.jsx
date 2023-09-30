@@ -5,7 +5,7 @@ function MyInput({ text, type, props, fullWidth = false }) {
   return (
     <TextField
       fullWidth={fullWidth}
-      variant="standard"
+      variant="filled"
       placeholder={text}
       type={type}
       {...props}

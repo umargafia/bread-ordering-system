@@ -7,10 +7,11 @@ function AuthPage() {
   return (
     <Grid
       sx={{
-        minHeight: '80vh',
+        minHeight: '97vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        bgcolor: 'primary.black',
       }}
     >
       <Box
